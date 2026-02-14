@@ -1,12 +1,13 @@
 {
   "name": "My Love",
   "greetingText": "I really like your name btw!",
-  "wishText": "Aankhon me teri Ajab si Ajab si aadae hai, Dil ko bna de malang ye teri wo hawayeinn hai",
-  "imagePath": "img/vector.jpg",
+  "wishText": "In other words, mahal kita!",
+  "imagePath": "img/FirstImage.jpg",
   "photos": [
-    { "src": "img/photo1.jpg", "caption": "Our first photo together" },
-    { "src": "img/photo2.jpg", "caption": "That amazing sunset" },
-    { "src": "img/photo3.jpg", "caption": "My favorite memory" }
+    { "src": "img/Christmas.jpg", "caption": "Christmas" },
+    { "src": "img/Halloween.jpg", "caption": "Halloween" },
+    { "src": "img/NewYear.jpg", "caption": "New Year" },
+    { "src": "img/RoadTrip.jpg", "caption": "Road Trip" }
   ],
   "firstDate": {
     "date": "January 1, 2025",
@@ -14,9 +15,9 @@
     "memory": "We talked for hours and I knew you were special from the very first moment."
   },
   "memories": [
-    { "title": "Our First Date", "description": "Coffee and endless conversations", "icon": "☕" },
-    { "title": "First Trip Together", "description": "That weekend getaway we'll never forget", "icon": "✈️" },
-    { "title": "Our Song", "description": "The one that always makes us smile", "icon": "🎵" },
-    { "title": "Movie Night", "description": "Blankets, popcorn, and your favorite movie", "icon": "🎬" }
+    { "title": "Travel Together", "description": "Explore new places and make memories", "icon": "✈️" },
+    { "title": "Watch The Sunrise", "description": "Stay up all night just to see it together", "icon": "🌅" },
+    { "title": "Build Our Home", "description": "A cozy place that's just ours", "icon": "🏠" },
+    { "title": "Forever With You", "description": "Every moment, every day", "icon": "💍" }
   ]
 }
