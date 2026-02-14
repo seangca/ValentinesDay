@@ -4,17 +4,59 @@ html {
 
 body {
   margin: 0;
-  font-family: "Work Sans", sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+  background-color: #000;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
 }
 
+/* iMessage Header Bar */
+.imessage-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-back {
+  position: absolute;
+  left: 16px;
+  color: #007AFF;
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+
+.header-avatar {
+  font-size: 1.2rem;
+}
+
+.header-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Container */
 .container {
   height: 100vh;
-  width: 100vh;
+  width: 100%;
+  max-width: 500px;
   margin: 0 auto;
   text-align: center;
   visibility: hidden;
   position: relative;
   overflow: hidden;
+  padding-top: 60px;
 }
 
 .container div.six {
@@ -34,11 +76,61 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  top: 20vh;
+  top: 25vh;
+  padding: 0 16px;
 }
 
+/* iMessage Bubbles */
+.bubble {
+  max-width: 75%;
+  padding: 10px 16px;
+  border-radius: 18px;
+  margin-bottom: 4px;
+  font-size: 1.05rem;
+  line-height: 1.4;
+  clear: both;
+  position: relative;
+}
+
+.bubble.sent {
+  background: #007AFF;
+  color: #fff;
+  margin-left: auto;
+  margin-right: 0;
+  text-align: left;
+  border-bottom-right-radius: 4px;
+  float: right;
+}
+
+.bubble.received {
+  background: #1C1C1E;
+  color: #fff;
+  margin-right: auto;
+  margin-left: 0;
+  text-align: left;
+  border-bottom-left-radius: 4px;
+  float: left;
+}
+
+.bubble-text {
+  margin: 0;
+}
+
+.name-inline {
+  color: #5AC8FA;
+  font-weight: 600;
+}
+
+/* Section One - Greeting */
 .one {
-  font-size: 4.5rem;
+  font-size: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.one h1 {
+  display: none;
 }
 
 .one > img {
@@ -49,26 +141,30 @@ body {
 }
 
 .two {
-  font-size: 1.2rem;
-  font-weight: lighter;
+  font-size: 1.05rem;
 }
 
+/* Section Three */
 .three {
-  font-size: 3rem;
+  font-size: 1.05rem;
 }
 
+/* Section Four - Text Box (iMessage input) */
 .four .text-box {
-  width: 600px;
+  width: 90%;
+  max-width: 400px;
   margin: 0 auto;
-  border: 3px solid #aaa;
-  border-radius: 5px;
-  padding: 10px;
+  background: #1C1C1E;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 22px;
+  padding: 10px 50px 10px 16px;
   position: relative;
 }
 
 .text-box p {
   margin: 0;
   text-align: left;
+  color: #fff;
 }
 
 .text-box span {
@@ -77,29 +173,53 @@ body {
 
 .text-box .fake-btn {
   position: absolute;
-  right: 5px;
-  bottom: 5px;
+  right: 6px;
+  bottom: 6px;
+  top: 6px;
   color: #fff;
-  background-color: rgb(21, 161, 237);
-  padding: 5px 8px;
-  border-radius: 3px;
+  background: #007AFF;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
 }
 
+.text-box .fake-btn svg {
+  width: 18px;
+  height: 18px;
+  margin-left: 2px;
+}
+
+/* Section Five - Ideas */
 .five p {
-  font-size: 2rem;
+  font-size: 1.3rem;
   position: absolute;
   left: 0;
   right: 0;
+  padding: 0 16px;
+}
+
+.five p.bubble {
+  position: absolute;
+  max-width: 75%;
+  padding: 10px 16px;
+  margin: 0;
 }
 
 .idea-3 strong {
   padding: 3px 5px;
   border-radius: 3px;
   display: inline-block;
+  background: rgba(0, 122, 255, 0.3);
+  color: #5AC8FA;
 }
 
 .five .idea-5 {
-  font-size: 4rem;
+  font-size: 2.5rem;
+  color: #fff;
 }
 
 .idea-5 span,
@@ -109,9 +229,11 @@ body {
 }
 
 .idea-6 span {
-  font-size: 15rem;
+  font-size: 10rem;
+  color: #007AFF;
 }
 
+/* Section Six - Photo & Wish */
 .six {
   position: relative;
 }
@@ -120,6 +242,7 @@ body {
   display: inline-block;
   max-width: 45%;
   height: auto;
+  border-radius: 16px;
 }
 
 .six .hat {
@@ -127,9 +250,22 @@ body {
   width: 80px;
   top: -35px;
   left: 41.5%;
-  /* transform: scale(0.1); */
 }
 
+.wish-hbd {
+  font-size: 2em;
+  margin: 0;
+  color: #fff;
+}
+
+.wish h5 {
+  font-weight: 300;
+  font-size: 1.2rem;
+  margin: 10px 0 0;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Section Seven - Balloons */
 .baloons img {
   display: inline-block;
   position: absolute;
@@ -148,6 +284,7 @@ body {
   left: 30%;
 }
 
+/* Section Eight - Confetti */
 .eight svg {
   width: 25px;
   position: absolute;
@@ -157,80 +294,32 @@ body {
   z-index: -1;
 }
 
-.eight svg:nth-child(1) {
-  top: 7vh;
-  left: 5vw;
-  fill: #bd6ecf;
-}
+.eight svg:nth-child(1) { top: 7vh; left: 5vw; fill: #007AFF; }
+.eight svg:nth-child(2) { top: 23vh; left: 35vw; fill: #5AC8FA; }
+.eight svg:nth-child(3) { top: 33vh; left: 23vw; fill: #34C759; }
+.eight svg:nth-child(4) { top: 43vh; left: 57vw; fill: #FF2D55; }
+.eight svg:nth-child(5) { top: 68vh; left: 7vw; fill: #FF9500; }
+.eight svg:nth-child(6) { top: 42vh; left: 77vw; fill: #AF52DE; }
+.eight svg:nth-child(7) { top: 68vh; left: 83vw; fill: #FF375F; }
+.eight svg:nth-child(8) { top: 86vh; left: 37vw; fill: #5E5CE6; }
+.eight svg:nth-child(9) { top: 94vh; left: 87vw; fill: #007AFF; }
 
-.eight svg:nth-child(2) {
-  top: 23vh;
-  left: 35vw;
-  fill: #7dd175;
-}
-
-.eight svg:nth-child(3) {
-  top: 33vh;
-  left: 23vw;
-  fill: #349d8b;
-}
-
-.eight svg:nth-child(4) {
-  top: 43vh;
-  left: 57vw;
-  fill: #347a9d;
-}
-
-.eight svg:nth-child(5) {
-  top: 68vh;
-  left: 7vw;
-  fill: #c66053;
-}
-
-.eight svg:nth-child(6) {
-  top: 42vh;
-  left: 77vw;
-  fill: #bfaa40;
-}
-
-.eight svg:nth-child(7) {
-  top: 68vh;
-  left: 83vw;
-  fill: #e3bae8;
-}
-
-.eight svg:nth-child(8) {
-  top: 86vh;
-  left: 37vw;
-  fill: #8762cb;
-}
-
-.eight svg:nth-child(9) {
-  top: 94vh;
-  left: 87vw;
-  fill: #9a90da;
-}
-
-.wish-hbd {
-  font-size: 3em;
-  margin: 0;
-  /* text-transform: uppercase; */
-}
-
-.wish h5 {
-  font-weight: lighter;
-  font-size: 2rem;
-  margin: 10px 0 0;
-}
-
+/* Section Nine - Ending */
 .nine p {
-  font-size: 2rem;
-  font-weight: lighter;
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 #replay {
   z-index: 3;
   cursor: pointer;
+  color: #007AFF;
+  font-weight: 500;
+}
+
+#replay:hover {
+  text-decoration: underline;
 }
 
 /* Photo Gallery Section */
@@ -239,29 +328,29 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 20px 16px;
 }
 
 .gallery-title {
-  font-size: 2.5rem;
-  color: #ff69b4;
-  margin-bottom: 20px;
+  font-size: 1.6rem;
+  color: #5AC8FA;
+  margin-bottom: 16px;
+  font-weight: 600;
 }
 
 .gallery-grid {
   display: flex;
-  gap: 20px;
+  gap: 8px;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 900px;
+  max-width: 100%;
 }
 
 .gallery-item {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
+  background: #1C1C1E;
+  border-radius: 14px;
   overflow: hidden;
-  width: 250px;
+  width: 140px;
   transition: transform 0.3s ease;
 }
 
@@ -271,15 +360,15 @@ body {
 
 .gallery-item img {
   width: 100%;
-  height: 200px;
+  height: 140px;
   object-fit: cover;
   display: block;
 }
 
 .gallery-caption {
-  padding: 10px;
-  font-size: 0.95rem;
-  color: #555;
+  padding: 8px;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
   text-align: center;
   margin: 0;
 }
@@ -290,54 +379,55 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 20px 16px;
 }
 
 .first-date-title {
-  font-size: 2.5rem;
-  color: #ff69b4;
-  margin-bottom: 20px;
+  font-size: 1.6rem;
+  color: #5AC8FA;
+  margin-bottom: 16px;
+  font-weight: 600;
 }
 
 .first-date-card {
-  background: linear-gradient(135deg, #fff0f5, #ffe4ec);
+  background: #1C1C1E;
   border-radius: 16px;
-  padding: 30px 40px;
-  box-shadow: 0 6px 20px rgba(255, 105, 180, 0.15);
-  max-width: 500px;
-  width: 90%;
+  padding: 24px;
+  max-width: 400px;
+  width: 100%;
+  text-align: left;
 }
 
 .first-date-detail {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 15px;
-  font-size: 1.1rem;
+  margin-bottom: 12px;
+  font-size: 1rem;
 }
 
 .detail-icon {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .detail-label {
-  font-weight: bold;
-  color: #ff69b4;
-  min-width: 60px;
+  font-weight: 600;
+  color: #007AFF;
+  min-width: 55px;
 }
 
 .detail-value {
-  color: #333;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .first-date-memory {
-  margin-top: 20px;
+  margin-top: 16px;
   font-style: italic;
-  font-size: 1.1rem;
-  color: #666;
-  line-height: 1.6;
-  border-top: 1px solid rgba(255, 105, 180, 0.2);
-  padding-top: 15px;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.5;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 14px;
 }
 
 /* Our Memories / Things We've Done Section */
@@ -346,88 +436,60 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 20px 16px;
 }
 
 .memories-title {
-  font-size: 2.5rem;
-  color: #ff69b4;
-  margin-bottom: 20px;
+  font-size: 1.6rem;
+  color: #5AC8FA;
+  margin-bottom: 16px;
+  font-weight: 600;
 }
 
 .memories-timeline {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  max-width: 500px;
-  width: 90%;
+  gap: 10px;
+  max-width: 400px;
+  width: 100%;
 }
 
 .memory-item {
-  background: #fff;
-  border-radius: 12px;
-  padding: 20px 25px;
-  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.15);
-  border-left: 4px solid #ff69b4;
+  background: #1C1C1E;
+  border-radius: 14px;
+  padding: 16px 20px;
+  border-left: 3px solid #007AFF;
   text-align: left;
 }
 
 .memory-icon {
-  font-size: 2rem;
+  font-size: 1.5rem;
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .memory-title-text {
-  margin: 0 0 5px;
-  font-size: 1.2rem;
-  color: #333;
+  margin: 0 0 4px;
+  font-size: 1.05rem;
+  color: #fff;
+  font-weight: 600;
 }
 
 .memory-desc {
   margin: 0;
-  color: #777;
-  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
   line-height: 1.4;
 }
 
 /* Media Queries */
-@media screen and (max-height: 1000px) {
-  .six .hat {
-    left: 40%;
-  }
-}
-
-@media screen and (max-height: 800px) {
-  .six .hat {
-    left: 37%;
-  }
-}
-
-@media screen and (max-height: 700px) {
-  .six .hat {
-    left: 32%;
-  }
-}
-
-@media screen and (max-height: 850px) and (max-width: 450px) {
-  .six .hat {
-    left: 32%;
-  }
-}
-
 @media screen and (max-width: 500px) {
   .container {
-    width: 90%;
+    width: 100%;
   }
 
   .four .text-box {
-    width: 90%;
-  }
-
-  .text-box .fake-btn {
-    right: 5px;
-    bottom: -38px;
+    width: 85%;
   }
 
   .idea-5 span {
@@ -435,7 +497,7 @@ body {
   }
 
   .idea-6 span {
-    font-size: 10rem;
+    font-size: 7rem;
   }
 
   .six .hat {
@@ -444,15 +506,22 @@ body {
   }
 
   .wish-hbd {
-    font-size: 2.3em;
+    font-size: 1.8em;
   }
 
   .wish h5 {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
   }
 
   .nine p {
-    font-size: 1.5rem;
-    font-weight: lighter;
+    font-size: 1.2rem;
+  }
+
+  .gallery-item {
+    width: 110px;
+  }
+
+  .gallery-item img {
+    height: 110px;
   }
 }

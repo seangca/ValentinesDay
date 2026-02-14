@@ -5,41 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Happy Valentine :)</title>
-    <link
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
     <link rel="shortcut icon" type="image/png" href="./img/heart.svg" />
     <link rel="stylesheet" href="style/style.css" />
   </head>
 
   <body>
+    <div class="imessage-header">
+      <div class="header-back">&lt;</div>
+      <div class="header-avatar">❤️</div>
+      <div class="header-name" id="name">xyz</div>
+    </div>
     <div class="container">
       <div class="one">
-        <h1 class="one">
-          Hey
-          <span id="name">xyz</span>
-        </h1>
-        <p class="two" id="greetingText">I really like your name btw!</p>
+        <div class="bubble received">
+          <p class="bubble-text">Hey <span class="name-inline" id="nameInline">xyz</span></p>
+        </div>
+        <div class="bubble sent two" id="greetingText">
+          <p class="bubble-text">I really like your name btw!</p>
+        </div>
       </div>
       <div class="three">
-        <p>It's Valentine!!! :D</p>
+        <div class="bubble received">
+          <p class="bubble-text">It's Valentine!!! :D</p>
+        </div>
       </div>
       <div class="four">
         <div class="text-box">
           <p class="hbd-chatbox">
             Happy Valentine's Day!! Yeee! Love and blah blah...
           </p>
-          <p class="fake-btn">Send</p>
+          <p class="fake-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+              <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+            </svg>
+          </p>
         </div>
       </div>
       <div class="five">
-        <p class="idea-1">That's what I was going to do.</p>
-        <p class="idea-2">But then I stopped.</p>
-        <p class="idea-3">
+        <p class="idea-1 bubble sent">That's what I was going to do.</p>
+        <p class="idea-2 bubble sent">But then I stopped.</p>
+        <p class="idea-3 bubble sent">
           I realised, I wanted to do something <strong>special</strong>.
         </p>
-        <p class="idea-4">Because,</p>
-        <p class="idea-5">
+        <p class="idea-4 bubble received">Because,</p>
+        <p class="idea-5 bubble sent">
           You are one of a kind
           <span>:)</span>
         </p>

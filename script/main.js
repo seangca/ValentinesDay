@@ -364,19 +364,33 @@ const fetchData = () => {
   fetch("customize.json")
     .then((data) => data.json())
     .then((data) => {
-      // Handle original simple fields
-      const simpleFields = ["name", "greetingText", "wishText", "imagePath"];
-      simpleFields.forEach((field) => {
-        if (data[field] && data[field] !== "") {
-          if (field === "imagePath") {
-            document
-              .getElementById(field)
-              .setAttribute("src", data[field]);
-          } else {
-            document.getElementById(field).innerText = data[field];
-          }
+      // Handle name (appears in header and inline bubble)
+      if (data.name && data.name !== "") {
+        document.getElementById("name").innerText = data.name;
+        const nameInline = document.getElementById("nameInline");
+        if (nameInline) nameInline.innerText = data.name;
+      }
+
+      // Handle greetingText
+      if (data.greetingText && data.greetingText !== "") {
+        const greetingEl = document.getElementById("greetingText");
+        const bubbleText = greetingEl.querySelector(".bubble-text");
+        if (bubbleText) {
+          bubbleText.innerText = data.greetingText;
+        } else {
+          greetingEl.innerText = data.greetingText;
         }
-      });
+      }
+
+      // Handle wishText
+      if (data.wishText && data.wishText !== "") {
+        document.getElementById("wishText").innerText = data.wishText;
+      }
+
+      // Handle imagePath
+      if (data.imagePath && data.imagePath !== "") {
+        document.getElementById("imagePath").setAttribute("src", data.imagePath);
+      }
 
       // Handle photos gallery
       if (data.photos && data.photos.length > 0) {
