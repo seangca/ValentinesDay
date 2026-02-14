@@ -132,10 +132,6 @@ const animationTimeline = () => {
 
     .to(".idea-2", 0.4, bubbleOut, "+=1.5")
 
-    .fromTo(".idea-3", 0.4, bubbleIn, bubbleInTo)
-
-    .to(".idea-3", 0.4, bubbleOut, "+=1.5")
-
     .fromTo(".idea-4", 0.4, bubbleInReceived, bubbleInTo)
 
     .to(".idea-4", 0.4, bubbleOut, "+=1.5")
