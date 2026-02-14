@@ -255,6 +255,90 @@ const animationTimeline = () => {
       y: 30,
       zIndex: "-1",
     })
+    // Photo Gallery animations
+    .from(".gallery-title", 0.7, {
+      opacity: 0,
+      y: -30,
+      ease: Expo.easeOut,
+    })
+    .staggerFrom(
+      ".gallery-item",
+      0.6,
+      {
+        opacity: 0,
+        scale: 0.5,
+        y: 40,
+        ease: Back.easeOut.config(1.7),
+      },
+      0.2
+    )
+    .to(
+      ".photo-gallery",
+      0.7,
+      {
+        opacity: 0,
+        y: 30,
+      },
+      "+=3"
+    )
+    // First Date animations
+    .from(".first-date-title", 0.7, {
+      opacity: 0,
+      y: -30,
+      ease: Expo.easeOut,
+    })
+    .from(".first-date-card", 0.7, {
+      opacity: 0,
+      scale: 0.8,
+      ease: Back.easeOut.config(1.4),
+    })
+    .staggerFrom(
+      ".first-date-detail",
+      0.5,
+      {
+        opacity: 0,
+        x: -30,
+      },
+      0.2
+    )
+    .from(".first-date-memory", 0.5, {
+      opacity: 0,
+      y: 20,
+    })
+    .to(
+      ".first-date",
+      0.7,
+      {
+        opacity: 0,
+        y: 30,
+      },
+      "+=3"
+    )
+    // Memories timeline animations
+    .from(".memories-title", 0.7, {
+      opacity: 0,
+      y: -30,
+      ease: Expo.easeOut,
+    })
+    .staggerFrom(
+      ".memory-item",
+      0.6,
+      {
+        opacity: 0,
+        x: -50,
+        ease: Power2.easeOut,
+      },
+      0.3
+    )
+    .to(
+      ".our-memories",
+      0.7,
+      {
+        opacity: 0,
+        y: 30,
+      },
+      "+=3"
+    )
     .staggerFrom(".nine p", 1, ideaTextTrans, 1.2)
     .to(
       ".last-smile",
@@ -280,17 +364,60 @@ const fetchData = () => {
   fetch("customize.json")
     .then((data) => data.json())
     .then((data) => {
-      Object.keys(data).map((customData) => {
-        if (data[customData] !== "") {
-          if (customData === "imagePath") {
+      // Handle original simple fields
+      const simpleFields = ["name", "greetingText", "wishText", "imagePath"];
+      simpleFields.forEach((field) => {
+        if (data[field] && data[field] !== "") {
+          if (field === "imagePath") {
             document
-              .getElementById(customData)
-              .setAttribute("src", data[customData]);
+              .getElementById(field)
+              .setAttribute("src", data[field]);
           } else {
-            document.getElementById(customData).innerText = data[customData];
+            document.getElementById(field).innerText = data[field];
           }
         }
       });
+
+      // Handle photos gallery
+      if (data.photos && data.photos.length > 0) {
+        const galleryGrid = document.getElementById("galleryGrid");
+        galleryGrid.innerHTML = "";
+        data.photos.forEach((photo) => {
+          const item = document.createElement("div");
+          item.className = "gallery-item";
+          item.innerHTML = `
+            <img src="${photo.src}" alt="${photo.caption}" />
+            <p class="gallery-caption">${photo.caption}</p>
+          `;
+          galleryGrid.appendChild(item);
+        });
+      }
+
+      // Handle first date
+      if (data.firstDate) {
+        if (data.firstDate.date)
+          document.getElementById("firstDateDate").innerText = data.firstDate.date;
+        if (data.firstDate.place)
+          document.getElementById("firstDatePlace").innerText = data.firstDate.place;
+        if (data.firstDate.memory)
+          document.getElementById("firstDateMemory").innerText = data.firstDate.memory;
+      }
+
+      // Handle memories
+      if (data.memories && data.memories.length > 0) {
+        const timeline = document.getElementById("memoriesTimeline");
+        timeline.innerHTML = "";
+        data.memories.forEach((memory) => {
+          const item = document.createElement("div");
+          item.className = "memory-item";
+          item.innerHTML = `
+            <span class="memory-icon">${memory.icon}</span>
+            <h3 class="memory-title-text">${memory.title}</h3>
+            <p class="memory-desc">${memory.description}</p>
+          `;
+          timeline.appendChild(item);
+        });
+      }
     });
 };
 

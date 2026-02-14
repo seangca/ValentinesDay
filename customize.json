@@ -1,6 +1,22 @@
 {
-  "name": "xyz",
+  "name": "My Love",
   "greetingText": "I really like your name btw!",
   "wishText": "Aankhon me teri Ajab si Ajab si aadae hai, Dil ko bna de malang ye teri wo hawayeinn hai",
-  "imagePath": "img/vector.jpg"
+  "imagePath": "img/vector.jpg",
+  "photos": [
+    { "src": "img/photo1.jpg", "caption": "Our first photo together" },
+    { "src": "img/photo2.jpg", "caption": "That amazing sunset" },
+    { "src": "img/photo3.jpg", "caption": "My favorite memory" }
+  ],
+  "firstDate": {
+    "date": "January 1, 2025",
+    "place": "That cozy little café downtown",
+    "memory": "We talked for hours and I knew you were special from the very first moment."
+  },
+  "memories": [
+    { "title": "Our First Date", "description": "Coffee and endless conversations", "icon": "☕" },
+    { "title": "First Trip Together", "description": "That weekend getaway we'll never forget", "icon": "✈️" },
+    { "title": "Our Song", "description": "The one that always makes us smile", "icon": "🎵" },
+    { "title": "Movie Night", "description": "Blankets, popcorn, and your favorite movie", "icon": "🎬" }
+  ]
 }

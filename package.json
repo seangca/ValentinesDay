@@ -1,7 +1,7 @@
 {
-  "name": "happy-Valentine",
+  "name": "valentines-day",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Valentine's Day wish animation",
   "main": "index.js",
   "devDependencies": {
     "browser-sync": "^2.18.13",
@@ -9,25 +9,23 @@
   },
   "scripts": {
     "start": "run-script-os",
-    "start:win32": "browser-sync start --server --files '**/*.css, **/*.html, **/*.js, !node_modules/**/*' --directory --port 7777 --browser \"C:\\Program Files\\Firefox Developer Edition\\firefox.exe\"",
-    "//": "Hello! If you are having trouble running this command. Try changing Firefox Developer Edition to FirefoxDeveloperEdition",
+    "start:win32": "browser-sync start --server --files '**/*.css, **/*.html, **/*.js, !node_modules/**/*' --directory --port 7777",
     "start:darwin:linux": "browser-sync start --server --files '**/*.css, **/*.html, **/*.js, !node_modules/**/*' --directory --port 7777",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/faahim/happy-birthday.git"
+    "url": "git+https://github.com/seangca/ValentinesDay.git"
   },
   "keywords": [
-    "Happy",
-    "Birthday"
+    "Valentine",
+    "Love"
   ],
-  "author": "Afiur Rahman Fahim",
-  "modification": "GovindCodes",
+  "author": "seangca",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/faahim/happy-birthday/issues"
+    "url": "https://github.com/seangca/ValentinesDay/issues"
   },
-  "homepage": "https://github.com/faahim/happy-birthday#readme",
+  "homepage": "https://seangca.github.io/ValentinesDay/",
   "dependencies": {}
 }

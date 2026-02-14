@@ -233,6 +233,164 @@ body {
   cursor: pointer;
 }
 
+/* Photo Gallery Section */
+.photo-gallery {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.gallery-title {
+  font-size: 2.5rem;
+  color: #ff69b4;
+  margin-bottom: 20px;
+}
+
+.gallery-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 900px;
+}
+
+.gallery-item {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
+  overflow: hidden;
+  width: 250px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-caption {
+  padding: 10px;
+  font-size: 0.95rem;
+  color: #555;
+  text-align: center;
+  margin: 0;
+}
+
+/* First Date Section */
+.first-date {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.first-date-title {
+  font-size: 2.5rem;
+  color: #ff69b4;
+  margin-bottom: 20px;
+}
+
+.first-date-card {
+  background: linear-gradient(135deg, #fff0f5, #ffe4ec);
+  border-radius: 16px;
+  padding: 30px 40px;
+  box-shadow: 0 6px 20px rgba(255, 105, 180, 0.15);
+  max-width: 500px;
+  width: 90%;
+}
+
+.first-date-detail {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.detail-icon {
+  font-size: 1.5rem;
+}
+
+.detail-label {
+  font-weight: bold;
+  color: #ff69b4;
+  min-width: 60px;
+}
+
+.detail-value {
+  color: #333;
+}
+
+.first-date-memory {
+  margin-top: 20px;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+  border-top: 1px solid rgba(255, 105, 180, 0.2);
+  padding-top: 15px;
+}
+
+/* Our Memories / Things We've Done Section */
+.our-memories {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.memories-title {
+  font-size: 2.5rem;
+  color: #ff69b4;
+  margin-bottom: 20px;
+}
+
+.memories-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 500px;
+  width: 90%;
+}
+
+.memory-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px 25px;
+  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.15);
+  border-left: 4px solid #ff69b4;
+  text-align: left;
+}
+
+.memory-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.memory-title-text {
+  margin: 0 0 5px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.memory-desc {
+  margin: 0;
+  color: #777;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
 /* Media Queries */
 @media screen and (max-height: 1000px) {
   .six .hat {
